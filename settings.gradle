@@ -2,6 +2,19 @@ pluginManagement {
 	repositories {
 		gradlePluginPortal()
 		maven { url 'https://repo.spring.io/plugins-release' }
+		maven {
+			url = uri("https://repo.gradle.org/gradle/enterprise-libs-snapshots-local")
+			credentials {
+				username = settings['enterprise.snapshots.username']
+				password = settings['enterprise.snapshots.password']
+			}
+			authentication {
+				basic(BasicAuthentication)
+			}
+		}
+	}
+	plugins {
+		id("com.gradle.enterprise.test-distribution") version "1.0-20200406082444-master"
 	}
 }
 apply from: "$rootDir/gradle/build-cache-settings.gradle"
