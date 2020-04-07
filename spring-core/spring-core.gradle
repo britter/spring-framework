@@ -92,3 +92,8 @@ jar {
 
 	from configurations.coroutines
 }
+
+test {
+	// org.springframework.core.io.PathResourceTests reads this files from src/test/resources folder
+	inputs.dir "src/test/resources/org/springframework/core/io"
+}
