@@ -7,3 +7,8 @@ dependencies {
 	testCompile("javax.transaction:javax.transaction-api")
 	testCompile("org.eclipse.persistence:javax.persistence")
 }
+
+test {
+	// sources in this directory are compiled during tests, so the source files are inputs
+	inputs.dir "src/test/java/org/springframework/context/index"
+}
