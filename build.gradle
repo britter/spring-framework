@@ -331,6 +331,8 @@ configure([rootProject] + javaProjects) { project ->
 		systemProperty("io.netty.leakDetection.level", "paranoid")
 		distribution {
 			enabled = true
+			maxLocalExecutors = 0
+			maxRemoteExecutors = 3
 		}
 	}
 
